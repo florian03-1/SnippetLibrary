@@ -1,0 +1,3 @@
+# SnippetLibrary
+
+Eine einfache Snippetverwaltung
