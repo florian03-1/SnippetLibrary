@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SnippetLibrary.View.Ressources.XAML">
+    <Viewbox x:Key="FileOpen">
+        <Canvas Width="24" Height="24">
+            <Path Data="M6.1,10L4,18V8H21A2,2 0 0,0 19,6H12L10,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H19C19.9,20 20.7,19.4 20.9,18.5L23.2,10H6.1M19,18H6L7.6,12H20.6L19,18Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="FileNew">
+        <Canvas Width="24" Height="24">
+            <Path Data="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="FileSave">
+        <Canvas Width="24" Height="24">
+            <Path Data="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="FileSaveAs">
+        <Canvas Width="24" Height="24">
+            <Path Data="M17,7V3H7V7H17M14,17A3,3 0 0,0 17,14A3,3 0 0,0 14,11A3,3 0 0,0 11,14A3,3 0 0,0 14,17M19,1L23,5V17A2,2 0 0,1 21,19H7C5.89,19 5,18.1 5,17V3A2,2 0 0,1 7,1H19M1,7H3V21H17V23H3A2,2 0 0,1 1,21V7Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="Close">
+        <Canvas Width="24" Height="24">
+            <Path Data="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="EditSnippet">
+        <Canvas Width="24" Height="24">
+            <Path Data="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="Delete">
+        <Canvas Width="24" Height="24">
+            <Path Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+
+    <Viewbox x:Key="Add">
+        <Canvas Width="24" Height="24">
+            <Path Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="Remove">
+        <Canvas Width="24" Height="24">
+            <Path Data="M19,13H5V11H19V13Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+
+    <Viewbox x:Key="About">
+        <Canvas Width="24" Height="24">
+            <Path Data="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+
+    <Viewbox x:Key="Help">
+        <Canvas Width="24" Height="24">
+            <Path Data="M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z" Fill="Black" />
+        </Canvas>
+    </Viewbox>
+</ResourceDictionary>

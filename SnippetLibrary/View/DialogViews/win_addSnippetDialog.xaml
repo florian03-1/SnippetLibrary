@@ -1,0 +1,84 @@
+﻿<Window x:Class="SnippetLibrary.View.DialogViews.win_addSnippetDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnippetLibrary.View.DialogViews"
+        mc:Ignorable="d"
+        ResizeMode="NoResize" 
+        Title="Neues Snippet anlegen" SizeToContent="Height" Width="333" Icon="/SnippetLibrary;component/Other/Icon/Icon(ico).ico" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10" DataContext="{Binding Snippet}">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="FontWeight" Value="DemiBold"></Setter>
+                    <Setter Property="Margin" Value="0,10,20,10"></Setter>
+                </Style>
+
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="Padding" Value="3"></Setter>
+                </Style>
+
+                <Style TargetType="ComboBox">
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="Padding" Value="3"></Setter>
+                </Style>
+            </Grid.Resources>
+
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock>Name:</TextBlock>
+            <TextBlock Grid.Row="1">Sprache:</TextBlock>
+            <TextBlock Grid.Row="2">Tags:</TextBlock>
+            <TextBlock Grid.Row="3">Erstellt von:</TextBlock>
+            <TextBlock Grid.Row="4">Erstellt am:</TextBlock>
+
+
+            <TextBox TabIndex="0" Grid.Column="1" Grid.Row="0" Text="{Binding Name}"></TextBox>
+            <ComboBox TabIndex="1" Grid.Column="1" Grid.Row="1" DisplayMemberPath="Name"
+                      ItemsSource="{Binding AviableLanguages}" SelectedItem="{Binding Language}"></ComboBox>
+            <TextBox TabIndex="2"  Grid.Column="1" Grid.Row="2" Text="{Binding Tags}"/>
+            <TextBox TabIndex="3"  Grid.Column="1" Grid.Row="3" Text="{Binding CreatedBy}"/>
+
+
+            <TextBlock Grid.Column="1" Grid.Row="4" Margin="0" FontWeight="Normal" Text="{Binding Path=CreatedAt, StringFormat={}{0:dd.MM.yyyy}}"></TextBlock>
+        </Grid>
+
+        <StackPanel Margin="0,0,10,10" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="Padding" Value="15,5"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Button TabIndex="4" Margin="0,0,10,0" Click="AddSnippet_Execute">Hinzufügen</Button>
+            <Button TabIndex="5" Click="Cancel_Execute">Abbrechen</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

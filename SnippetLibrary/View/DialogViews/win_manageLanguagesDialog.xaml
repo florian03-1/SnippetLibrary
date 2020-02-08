@@ -1,0 +1,84 @@
+﻿<Window x:Class="SnippetLibrary.View.DialogViews.win_manageLanguagesDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnippetLibrary.View.DialogViews"
+        mc:Ignorable="d"
+
+        MinWidth="400"  SizeToContent="Height" WindowStartupLocation="CenterScreen"
+        Title="Sprachenmanager"   Width="422.555" Icon="/SnippetLibrary;component/Other/Icon/Icon(ico).ico">
+        
+        <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SnippetLibrary;component/View/Ressources/XAML/rd_icons.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ListBox FontSize="13" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Name"></ListBox>
+
+        <Grid Grid.Row="1" Margin="0,10" DataContext="{Binding SelectedLanguage}">
+
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="12"></Setter>
+                    <Setter Property="FontWeight" Value="DemiBold"></Setter>
+                </Style>
+
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Padding="0,8" >Name:</Label>
+            <Label  Padding="0,8" Grid.Row="1">ID:</Label>
+            <Label  Padding="0,8" Grid.Row="2" Margin="0,0,15,0">Verweise:</Label>
+
+            <TextBox Grid.Column="1" VerticalAlignment="Center" Padding="0,3" Text="{Binding Name}"></TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding ID}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding UseCount}"></TextBlock>
+        </Grid>
+
+
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+
+            <Button Command="{Binding NewLanguageCommand}" Content="{StaticResource Add }"></Button>
+            <Button Command="{Binding DeleteLanguageCommand}" Margin="10,0,10,0" Content="{StaticResource Remove }"></Button>
+
+            <ContentPresenter Content="{StaticResource Help}" Height="20">
+                <ContentPresenter.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ShowAddRemoveHelpCommand}"/>
+                </ContentPresenter.InputBindings>
+            </ContentPresenter>
+        </StackPanel>
+
+
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Padding" Value="15,5"></Setter>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Click="Ok_Execute" Margin="0,0,10,0">Übernehmen</Button>
+            <Button Click="Cancel_Execute" Margin="0,0,0,0">Abbrechen</Button>
+        </StackPanel>
+    </Grid>
+</Window>
